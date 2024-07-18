@@ -1,0 +1,59 @@
+def add(x, y):
+    """Return the sum of x and y."""
+   return x + y
+
+def subtract(x, y):
+    """Return the difference between x and y."""
+    return x - y
+
+def multiply(x, y):
+    """Return the product of x and y."""
+    return x * y
+
+def divide(x, y):
+    """Return the division of x by y. Handle division by zero."""
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+
+def main():
+    print("Welcome to the basic calculator!")
+    
+    try:
+        # Input first number
+        num1 = float(input("Enter the first number: "))
+        
+        # Input second number
+        num2 = float(input("Enter the second number: "))
+        
+        # Choose operation
+        print("\nChoose an operation:")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
+        
+        choice = input("Enter your choice (1/2/3/4): ")
+        
+        # Perform the chosen operation
+        if choice == '1':
+            result = add(num1, num2)
+            operation = "Addition"
+        elif choice == '2':
+            result = subtract(num1, num2)
+            operation = "Subtraction"
+        elif choice == '3':
+            result = multiply(num1, num2)
+            operation = "Multiplication"
+        elif choice == '4':
+            result = divide(num1, num2)
+            operation = "Division"
+        else:
+            print("Invalid choice! Please enter a number between 1 and 4.")
+            return
+        
+        # Display the result
+        print(f"\n{operation} result: {result}")
+    
+    except ValueError:
+        print("Invalid input! Please enter numerical values for the numbers.")
